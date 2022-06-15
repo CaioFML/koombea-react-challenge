@@ -1,0 +1,33 @@
+.completed-tasks-label {
+  position: absolute;
+  width: 311px;
+  height: 49px;
+  left: 45px;
+  top: 580px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 37px;
+  line-height: 43px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.completed-tasks {
+  position: absolute;
+  width: 153px;
+  height: 133px;
+  left: 124px;
+  top: 550px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 90px;
+  line-height: 141px;
+  text-align: center;
+  
+  color: #000000;
+}
