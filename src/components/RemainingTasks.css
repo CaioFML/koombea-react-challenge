@@ -1,0 +1,33 @@
+.remaining-tasks-label {
+  position: absolute;
+  width: 339px;
+  height: 49px;
+  left: 31px;
+  top: 390px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 37px;
+  line-height: 43px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.remaining-tasks {
+  position: absolute;
+  width: 153px;
+  height: 133px;
+  left: 124px;
+  top: 360px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 90px;
+  line-height: 141px;
+  text-align: center;
+  
+  color: #000000;
+}
