@@ -1,0 +1,81 @@
+.container {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  left: 400px;
+  right: 0;
+  height: 100rm;
+  padding: 60px
+}
+
+.tasks {
+  position: relative;
+  display: block;
+  height: 10em;
+  width: 14em;
+  padding: 1em;
+  margin: 1em;
+
+  background: #FFE8A5;
+
+  box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tasks-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  
+  color: #000000;
+}
+
+.tasks-text-completed {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  text-decoration-line: line-through;
+
+  color: #000000;
+}
+
+.tasks-button {
+  position: absolute;
+  left: 100px;
+  top: 150px;
+  width: 136px;
+  height: 26px;
+
+  background: #FFFFFF;
+  border-width: 0.5px;
+  border-radius: 13px;
+}
+
+.tasks-button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 18px 1px rgba(0, 0, 0, 0.24);
+}
+
+.tasks-button-completed {
+  position: absolute;
+  left: 100px;
+  top: 150px;
+  width: 136px;
+  height: 26px;
+
+  background: #FFE8A5;
+  border: none;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: right;
+
+  color: #000000;
+}
