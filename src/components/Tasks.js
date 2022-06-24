@@ -4,31 +4,16 @@ import { TaskContext } from './TasksContext'
 import Timer from './Timer'
 
 function Tasks() {
-  const initialTasks = [
-    { key: '1', description: 'Label SAHUHUF ASUHFji ISJFIAFJASINAF', completed: false },
-    { key: '2', description: 'Label', completed: false },
-    { key: '3', description: 'Lorem ipsum', completed: false }
-  ]
-
-  const [tasks, setTasks] = useState(initialTasks)
-  const [completedTasks, setCompletedTasks] = useState(0)
-
   const tasksContext = useContext(TaskContext)
 
-  const incrementCompletedTasks = () => setCompletedTasks(prevState => {
-    let new_countage = prevState + 1
-
-    tasksContext.setCompletedCount(new_countage)
-
-    return new_countage
-  })
+  const incrementCompletedTasks = () => tasksContext.setCompletedCount(prevState => prevState + 1)
 
   const changeTaskToComplete = (task) => {
     let taskId = task.key
 
     incrementCompletedTasks()
 
-    setTasks(prevState => {
+    tasksContext.setTasks(prevState => {
       return (prevState.map(task => {
         if (task.key === taskId) {
           return {...task, completed: true }
@@ -41,7 +26,7 @@ function Tasks() {
 
   return(
     <div className='container'>
-      {tasks.map(task => {
+      {tasksContext.tasks.map(task => {
         return(
           <div className='tasks' key={task.key}>
             <p className={task.completed ? 'tasks-text-completed' : 'tasks-text'}>{task.description}</p>
