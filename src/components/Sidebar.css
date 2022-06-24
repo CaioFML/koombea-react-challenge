@@ -1,8 +1,8 @@
 .sidebar-background {
   background-color: #FFE8A5;
-  position: absolute;
+  position: fixed;
   width: 400px;
-  height: stretch;
+  height: 100vh;
   left: 0px;
   top: 0px;
 }
