@@ -21,13 +21,11 @@ function TaskForm() {
     })
   }
 
-  const incrementRemainingCount = () => taskContext.setRemainingCount(prevState => prevState + 1)
-
   const handleSubmit = (event) => {
     event.preventDefault()
 
     addTask(input.current.value)
-    incrementRemainingCount()
+    taskContext.incrementRemainingCount()
 
     input.current.value = ''
   }

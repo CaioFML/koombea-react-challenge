@@ -6,14 +6,11 @@ import Timer from './Timer'
 function Tasks() {
   const tasksContext = useContext(TaskContext)
 
-  const incrementCompletedTasks = () => tasksContext.setCompletedCount(prevState => prevState + 1)
-  const decrementRemainingCount = () => tasksContext.setRemainingCount(prevState => prevState - 1)
-
   const changeTaskToComplete = (task) => {
     let taskId = task.key
 
-    incrementCompletedTasks()
-    decrementRemainingCount()
+    tasksContext.incrementCompletedTasks()
+    tasksContext.decrementRemainingCount()
 
     tasksContext.setTasks(prevState => {
       return (prevState.map(task => {

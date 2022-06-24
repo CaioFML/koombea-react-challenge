@@ -6,7 +6,7 @@ export const TaskContext = createContext({
   tasks: [],
   setTasks: () => {},
   setCompletedCount: () => {},
-  setRemainingCount: () => {}
+  setRemainingCount: () => {},
 })
 
 const TaskProvider = ({ children }) => {
@@ -14,9 +14,23 @@ const TaskProvider = ({ children }) => {
   const [remainingCount, setRemainingCount] = useState(0)
   const [tasks, setTasks] = useState([])
 
+  const incrementCompletedTasks = () => setCompletedCount(prevState => prevState + 1)
+  const incrementRemainingCount = () => setRemainingCount(prevState => prevState + 1)
+  const decrementRemainingCount = () => setRemainingCount(prevState => prevState - 1)
+
   return (
     <>
-      <TaskContext.Provider value={{ completedCount, remainingCount, tasks, setTasks, setCompletedCount, setRemainingCount }}>
+      <TaskContext.Provider value={{
+        completedCount,
+        remainingCount,
+        tasks,
+        setTasks,
+        setCompletedCount,
+        setRemainingCount,
+        incrementCompletedTasks,
+        decrementRemainingCount,
+        incrementRemainingCount
+      }}>
         {children}
       </TaskContext.Provider>
     </>
