@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import './Tasks.css'
+import Timer from './Timer'
 
 function Tasks() {
-  const [tasks, setTasks] = useState(
-    [
-      { key: '1', description: 'Label SAHUHUF ASUHFji ISJFIAFJASINAF', completed: false ,completedAt: null },
-      { key: '2', description: 'Label', completed: false, completedAt: null },
-      { key: '3', description: 'Lorem ipsum', completed: false, completedAt: null }
-    ]
-  )
+  const initialTasks = [
+    { key: '1', description: 'Label SAHUHUF ASUHFji ISJFIAFJASINAF', completed: false },
+    { key: '2', description: 'Label', completed: false },
+    { key: '3', description: 'Lorem ipsum', completed: false }
+  ]
+
+  const [tasks, setTasks] = useState(initialTasks)
 
   const changeTaskToComplete = (task) => {
     let taskId = task.key
@@ -26,7 +27,6 @@ function Tasks() {
 
   return(
     <div className='container'>
-      {console.log(tasks)}
       {tasks.map(task => {
         return(
           <div className='tasks' key={task.key}>
@@ -34,7 +34,7 @@ function Tasks() {
             <button
             className={task.completed ? 'tasks-button-completed' : 'tasks-button'}
             onClick={() => changeTaskToComplete(task)}>
-              {task.completed ? 'Completed at ...' : 'Mark as complete'}
+              {task.completed ? <Timer active={true} /> : 'Mark as complete'}
             </button>
           </div>
         )
