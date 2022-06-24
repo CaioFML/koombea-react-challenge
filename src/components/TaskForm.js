@@ -6,11 +6,7 @@ function TaskForm() {
   const taskContext = useContext(TaskContext)
   const input = useRef()
 
-  const addTask = (event) => {
-    event.preventDefault()
-
-    const input_value = input.current.value
-
+  const addTask = (input_value) => {
     taskContext.setTasks(prevState => {
       return(
         [
@@ -23,13 +19,19 @@ function TaskForm() {
         ]
       )
     })
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    addTask(input.current.value)
 
     input.current.value = ''
   }
 
   return(
     <>
-      <form onSubmit={addTask}>
+      <form onSubmit={handleSubmit}>
         <label className='form-label'>Task description:</label>
         <textarea id='task-description' name='task-description' className='form-input' ref={input}></textarea>
         <button className='form-button' type='submit'>Add task</button>
