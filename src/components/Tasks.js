@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './Tasks.css'
+import { TaskContext } from './TasksContext'
 import Timer from './Timer'
 
 function Tasks() {
@@ -10,9 +11,22 @@ function Tasks() {
   ]
 
   const [tasks, setTasks] = useState(initialTasks)
+  const [completedTasks, setCompletedTasks] = useState(0)
+
+  const tasksContext = useContext(TaskContext)
+
+  const incrementCompletedTasks = () => setCompletedTasks(prevState => {
+    let new_countage = prevState + 1
+
+    tasksContext.setCompletedCount(new_countage)
+
+    return new_countage
+  })
 
   const changeTaskToComplete = (task) => {
     let taskId = task.key
+
+    incrementCompletedTasks()
 
     setTasks(prevState => {
       return (prevState.map(task => {

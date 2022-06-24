@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import Tasks from './components/Tasks';
+import ThemeProvider from './components/TasksContext';
 
 function App() {
   return (
-    <div>
+    <ThemeProvider>
       <Sidebar />
       <Tasks />
-    </div>
+    </ThemeProvider>
   );
 }
 
